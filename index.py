@@ -1,4 +1,4 @@
-import time
+from time import sleep
 from screen import Screen
 from snake import Snake
 from control import Control
@@ -7,13 +7,7 @@ delay = 0.1
 wn = Screen().createScreen()
 head = Snake().createHead()
 control = Control(head)
-
-# Keyboard bindings
-wn.listen()
-wn.onkeypress(control.go_up, "w")
-wn.onkeypress(control.go_down, "s")
-wn.onkeypress(control.go_left, "a")
-wn.onkeypress(control.go_right, "d")
+control.addKeyboardBindings(wn)
 
 # Main game loop
 while True:
@@ -21,6 +15,6 @@ while True:
 
     control.move()
 
-    time.sleep(delay)
+    sleep(delay)
 
 wn.mainloop()
