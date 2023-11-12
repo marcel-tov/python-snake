@@ -20,34 +20,34 @@ class Control:
         self.screen.getWindow().onkeypress(self.goRight, "d")
 
     def goUp(self):
-        if self.snake.getSnakeHead().direction != self.directionDown:
-            self.snake.getSnakeHead().direction = self.directionUp
+        if self.snake.getHead().direction != self.directionDown:
+            self.snake.getHead().direction = self.directionUp
 
     def goDown(self):
-        if self.snake.getSnakeHead().direction != self.directionUp:
-            self.snake.getSnakeHead().direction = self.directionDown
+        if self.snake.getHead().direction != self.directionUp:
+            self.snake.getHead().direction = self.directionDown
 
     def goLeft(self):
-        if self.snake.getSnakeHead().direction != self.directionRight:
-            self.snake.getSnakeHead().direction = self.directionLeft
+        if self.snake.getHead().direction != self.directionRight:
+            self.snake.getHead().direction = self.directionLeft
 
     def goRight(self):
-        if self.snake.getSnakeHead().direction != self.directionLeft:
-            self.snake.getSnakeHead().direction = self.directionRight
+        if self.snake.getHead().direction != self.directionLeft:
+            self.snake.getHead().direction = self.directionRight
 
     def move(self):
-        if self.snake.getSnakeHead().direction == self.directionUp:
-            y = self.snake.getSnakeHead().ycor()
-            self.snake.getSnakeHead().sety(y + self.screen.step)
+        if self.snake.getHead().direction == self.directionUp:
+            y = self.snake.getHead().ycor()
+            self.snake.getHead().sety(y + self.screen.step)
 
-        if self.snake.getSnakeHead().direction == self.directionDown:
-            y = self.snake.getSnakeHead().ycor()
-            self.snake.getSnakeHead().sety(y - self.screen.step)
+        if self.snake.getHead().direction == self.directionDown:
+            y = self.snake.getHead().ycor()
+            self.snake.getHead().sety(y - self.screen.step)
 
-        if self.snake.getSnakeHead().direction == self.directionLeft:
-            x = self.snake.getSnakeHead().xcor()
-            self.snake.getSnakeHead().setx(x - self.screen.step)
+        if self.snake.getHead().direction == self.directionLeft:
+            x = self.snake.getHead().xcor()
+            self.snake.getHead().setx(x - self.screen.step)
 
-        if self.snake.getSnakeHead().direction == self.directionRight:
-            x = self.snake.getSnakeHead().xcor()
-            self.snake.getSnakeHead().setx(x + self.screen.step)
+        if self.snake.getHead().direction == self.directionRight:
+            x = self.snake.getHead().xcor()
+            self.snake.getHead().setx(x + self.screen.step)

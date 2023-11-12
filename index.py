@@ -7,7 +7,7 @@ from collisionDetection import CollisionDetection
 
 delay = 0.1
 screen = Screen()
-snake = Snake()
+snake = Snake(screen)
 control = Control(snake, screen)
 food = Food(screen)
 food.moveToRandom()
@@ -19,10 +19,13 @@ while True:
 
     if collisionDetection.snakeHitsScreenEdge(snake, screen):
         snake.reset()
+        sleep(1)
 
     if collisionDetection.snakeIsCollidingWithFood(snake, food, screen):
         food.moveToRandom()
+        snake.addSegment()
 
+    snake.move()
     control.move()
 
     sleep(delay)
