@@ -15,7 +15,16 @@ class Food:
         self.food.direction = "stop"
 
     def moveToRandom(self):
-        x = randint(self.screen.getMin(), self.screen.getMax())
-        y = randint(self.screen.getMin(), self.screen.getMax())
+        x = self.getRandom()
+        y = self.getRandom()
 
         self.food.goto(x, y)
+
+    def getRandom(self):
+        random = -1
+        step = self.screen.step
+
+        while (random % step != 0):
+            random = randint(self.screen.getMin(), self.screen.getMax())
+
+        return random
