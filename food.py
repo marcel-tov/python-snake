@@ -8,7 +8,6 @@ class Food:
     def __init__(self, screen: Screen):
         self.screen = screen
 
-    def __init__(self):
         self.food = turtle.Turtle()
         self.food.speed(0)
         self.food.shape("square")
@@ -18,7 +17,7 @@ class Food:
         self.food.direction = "stop"
 
     def moveToRandom(self):
-        x = randint(-290, 290)
-        y = randint(-290, 290)
+        x = randint(self.screen.getMin(), self.screen.getMax())
+        y = randint(self.screen.getMin(), self.screen.getMax())
 
         self.food.goto(x, y)

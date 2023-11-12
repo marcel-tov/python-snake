@@ -2,7 +2,7 @@ import turtle
 
 class Screen:
     width=600
-    height=600
+    height=width
     step=20
 
     def createScreen(self):
@@ -12,3 +12,12 @@ class Screen:
         screen.tracer(0) # Turns off the screen updates
 
         return screen
+
+    def getMinMax(self):
+        return (self.width / 2) - (self.step / 2)
+
+    def getMin(self):
+        return -abs(self.getMinMax())
+
+    def getMax(self):
+        return self.getMinMax()

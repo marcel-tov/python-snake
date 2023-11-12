@@ -10,7 +10,7 @@ window = screen.createScreen()
 head = Snake().createHead()
 control = Control(head, screen)
 control.addKeyboardBindings(window)
-food = Food()
+food = Food(screen)
 food.moveToRandom()
 
 # Main game loop
