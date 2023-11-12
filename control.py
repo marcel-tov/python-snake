@@ -40,18 +40,18 @@ class Control:
             self.snake.head.direction = self.directionRight
 
     def move(self):
+        x = self.snake.head.xcor()
+        y = self.snake.head.ycor()
+        step = self.screen.step
+
         if self.snake.head.direction == self.directionUp:
-            y = self.snake.head.ycor()
-            self.snake.head.sety(y + self.screen.step)
+            self.snake.head.sety(y + step)
 
         if self.snake.head.direction == self.directionDown:
-            y = self.snake.head.ycor()
-            self.snake.head.sety(y - self.screen.step)
+            self.snake.head.sety(y - step)
 
         if self.snake.head.direction == self.directionLeft:
-            x = self.snake.head.xcor()
-            self.snake.head.setx(x - self.screen.step)
+            self.snake.head.setx(x - step)
 
         if self.snake.head.direction == self.directionRight:
-            x = self.snake.head.xcor()
-            self.snake.head.setx(x + self.screen.step)
+            self.snake.head.setx(x + step)
