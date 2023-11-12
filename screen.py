@@ -5,13 +5,16 @@ class Screen:
     height=width
     step=20
 
-    def createScreen(self):
-        screen = turtle.Screen()
-        screen.title("Snake game")
-        screen.setup(width=self.width, height=self.height)
-        screen.tracer(0) # Turns off the screen updates
+    def __init__(self):
+        self.window = self.createWindow()
 
-        return screen
+    def createWindow(self):
+        window = turtle.Screen()
+        window.title("Snake game")
+        window.setup(width=self.width, height=self.height)
+        window.tracer(0) # Turns off the screen updates
+
+        return window
 
     def getMinMax(self):
         return (self.width / 2) - (self.step / 2)
@@ -21,3 +24,6 @@ class Screen:
 
     def getMax(self):
         return self.getMinMax()
+
+    def getWindow(self):
+        return self.window

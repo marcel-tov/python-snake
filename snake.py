@@ -1,19 +1,22 @@
 import turtle
 
-from food import Food
-from screen import Screen
-
 class Snake:
-    def create(self):
-        self.snake = turtle.Turtle()
-        self.snake.speed(0)
-        self.snake.shape("square")
-        self.snake.color("green")
-        self.snake.penup()
+    def __init__(self):
+        self.snakeHead = self.createSnakeHead()
+
+    def createSnakeHead(self):
+        self.snakeHead = turtle.Turtle()
+        self.snakeHead.speed(0)
+        self.snakeHead.shape("square")
+        self.snakeHead.color("green")
+        self.snakeHead.penup()
         self.reset()
 
-        return self.snake
+        return self.snakeHead
 
     def reset(self):
-        self.snake.home()
-        self.snake.direction = "stop"
+        self.snakeHead.home()
+        self.snakeHead.direction = "stop"
+
+    def getSnakeHead(self):
+        return self.snakeHead

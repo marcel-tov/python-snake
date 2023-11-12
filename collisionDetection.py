@@ -1,18 +1,18 @@
-import turtle
 from food import Food
 from screen import Screen
+from snake import Snake
 
 class CollisionDetection:
-    def isSnakeHitsScreenEdge(self, snakeHead: turtle.Turtle, screen: Screen):
+    def isSnakeHitsScreenEdge(self, snake: Snake, screen: Screen):
         min = screen.getMin()
         max = screen.getMax()
-        x = snakeHead.xcor()
-        y = snakeHead.ycor()
+        x = snake.getSnakeHead().xcor()
+        y = snake.getSnakeHead().ycor()
 
         if x < min or x > max or y < min or y > max:
             return True
 
         return False
 
-    def isSnakeCollidingWithFood(self, snakeHead: turtle.Turtle, food: Food, screen: Screen):
-        return snakeHead.distance(food.food) < screen.step
+    def isSnakeCollidingWithFood(self, snake: Snake, food: Food, screen: Screen):
+        return snake.getSnakeHead().distance(food.food) < screen.step
