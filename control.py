@@ -7,8 +7,8 @@ class Control:
     directionLeft = "left"
     directionRight = "right"
 
-    def __init__(self, head, screen: Screen):
-        self.head = head
+    def __init__(self, snake, screen: Screen):
+        self.snake = snake
         self.screen = screen
 
     def addKeyboardBindings(self, window: turtle):
@@ -19,34 +19,34 @@ class Control:
         window.onkeypress(self.goRight, "d")
 
     def goUp(self):
-        if self.head.direction != self.directionDown:
-            self.head.direction = self.directionUp
+        if self.snake.direction != self.directionDown:
+            self.snake.direction = self.directionUp
 
     def goDown(self):
-        if self.head.direction != self.directionUp:
-            self.head.direction = self.directionDown
+        if self.snake.direction != self.directionUp:
+            self.snake.direction = self.directionDown
 
     def goLeft(self):
-        if self.head.direction != self.directionRight:
-            self.head.direction = self.directionLeft
+        if self.snake.direction != self.directionRight:
+            self.snake.direction = self.directionLeft
 
     def goRight(self):
-        if self.head.direction != self.directionLeft:
-            self.head.direction = self.directionRight
+        if self.snake.direction != self.directionLeft:
+            self.snake.direction = self.directionRight
 
     def move(self):
-        if self.head.direction == self.directionUp:
-            y = self.head.ycor()
-            self.head.sety(y + self.screen.step)
+        if self.snake.direction == self.directionUp:
+            y = self.snake.ycor()
+            self.snake.sety(y + self.screen.step)
 
-        if self.head.direction == self.directionDown:
-            y = self.head.ycor()
-            self.head.sety(y - self.screen.step)
+        if self.snake.direction == self.directionDown:
+            y = self.snake.ycor()
+            self.snake.sety(y - self.screen.step)
 
-        if self.head.direction == self.directionLeft:
-            x = self.head.xcor()
-            self.head.setx(x - self.screen.step)
+        if self.snake.direction == self.directionLeft:
+            x = self.snake.xcor()
+            self.snake.setx(x - self.screen.step)
 
-        if self.head.direction == self.directionRight:
-            x = self.head.xcor()
-            self.head.setx(x + self.screen.step)
+        if self.snake.direction == self.directionRight:
+            x = self.snake.xcor()
+            self.snake.setx(x + self.screen.step)

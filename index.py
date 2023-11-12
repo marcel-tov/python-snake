@@ -7,8 +7,8 @@ from food import Food
 delay = 0.1
 screen = Screen()
 window = screen.createScreen()
-head = Snake().createHead()
-control = Control(head, screen)
+snake = Snake().create()
+control = Control(snake, screen)
 control.addKeyboardBindings(window)
 food = Food(screen)
 food.moveToRandom()

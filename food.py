@@ -3,8 +3,6 @@ from random import randint
 from screen import Screen
 
 class Food:
-    food: turtle
-
     def __init__(self, screen: Screen):
         self.screen = screen
 
