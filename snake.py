@@ -10,7 +10,10 @@ class Snake:
         self.snake.shape("square")
         self.snake.color("green")
         self.snake.penup()
-        self.snake.home()
-        self.snake.direction = "stop"
+        self.reset()
 
         return self.snake
+
+    def reset(self):
+        self.snake.home()
+        self.snake.direction = "stop"
