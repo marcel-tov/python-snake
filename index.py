@@ -9,7 +9,6 @@ delay = 0.1
 screen = Screen()
 snake = Snake()
 control = Control(snake, screen)
-control.addKeyboardBindings()
 food = Food(screen)
 food.moveToRandom()
 collisionDetection = CollisionDetection()

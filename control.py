@@ -10,6 +10,7 @@ class Control:
     def __init__(self, snake: Snake, screen: Screen):
         self.snake = snake
         self.screen = screen
+        self.addKeyboardBindings()
 
     def addKeyboardBindings(self):
         self.screen.getWindow().listen()
