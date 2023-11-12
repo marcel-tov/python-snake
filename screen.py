@@ -11,7 +11,7 @@ class Screen:
     def createWindow(self):
         window = turtle.Screen()
         window.title("Snake game")
-        window.setup(width=self.width, height=self.height)
+        window.setup(self.width, self.height)
         window.tracer(0) # Turns off the screen updates
 
         return window
