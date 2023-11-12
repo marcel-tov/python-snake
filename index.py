@@ -13,13 +13,16 @@ food = Food(screen)
 food.moveToRandom()
 collisionDetection = CollisionDetection()
 
+def resetGame():
+    snake.reset()
+    sleep(1)
+
 # Main game loop
 while True:
-    screen.getWindow().update()
+    screen.window.update()
 
     if collisionDetection.snakeHitsScreenEdge(snake, screen):
-        snake.reset()
-        sleep(1)
+        resetGame()
 
     if collisionDetection.snakeIsCollidingWithFood(snake, food, screen):
         food.moveToRandom()
@@ -28,6 +31,10 @@ while True:
     snake.move()
     control.move()
 
+    # Check for head collision with the body segments
+    if collisionDetection.snakeIsCollidingWithItself(snake, screen):
+        resetGame()
+
     sleep(delay)
 
-window.mainloop()
+screen.window.mainloop()

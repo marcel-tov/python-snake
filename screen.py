@@ -24,6 +24,3 @@ class Screen:
 
     def getMax(self):
         return self.getMinMax()
-
-    def getWindow(self):
-        return self.window

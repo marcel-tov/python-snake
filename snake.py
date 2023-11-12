@@ -9,9 +9,6 @@ class Snake:
         self.head = self.createBody("green")
         self.reset()
 
-    def getHead(self):
-        return self.head
-
     def reset(self):
         self.head.home()
         self.head.direction = "stop"
@@ -42,7 +39,7 @@ class Snake:
             self.segments[i].goto(x, y)
 
         if len(self.segments) > 0:
-            x = self.getHead().xcor()
-            y = self.getHead().ycor()
+            x = self.head.xcor()
+            y = self.head.ycor()
             self.segments[0].goto(x, y)
 
