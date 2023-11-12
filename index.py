@@ -5,19 +5,20 @@ from control import Control
 from food import Food
 
 delay = 0.1
-wn = Screen().createScreen()
+screen = Screen()
+window = screen.createScreen()
 head = Snake().createHead()
-control = Control(head)
-control.addKeyboardBindings(wn)
+control = Control(head, screen)
+control.addKeyboardBindings(window)
 food = Food()
 food.moveToRandom()
 
 # Main game loop
 while True:
-    wn.update()
+    window.update()
 
     control.move()
 
     sleep(delay)
 
-wn.mainloop()
+window.mainloop()
