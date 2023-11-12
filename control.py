@@ -18,6 +18,10 @@ class Control:
         self.screen.window.onkeypress(self.goDown, "s")
         self.screen.window.onkeypress(self.goLeft, "a")
         self.screen.window.onkeypress(self.goRight, "d")
+        self.screen.window.onkeypress(self.goUp, "Up")
+        self.screen.window.onkeypress(self.goDown, "Down")
+        self.screen.window.onkeypress(self.goLeft, "Left")
+        self.screen.window.onkeypress(self.goRight, "Right")
 
     def goUp(self):
         if self.snake.head.direction != self.directionDown:
