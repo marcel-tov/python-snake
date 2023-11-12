@@ -17,7 +17,7 @@ class Screen:
         return window
 
     def getMinMax(self):
-        return (self.width / 2) - (self.step / 2)
+        return self.width / 2
 
     def getMin(self):
         return -abs(self.getMinMax())
