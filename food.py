@@ -25,6 +25,6 @@ class Food:
         step = self.screen.step
 
         while (random % step != 0):
-            random = randint(self.screen.getMin(), self.screen.getMax())
+            random = randint(self.screen.getMin() + step, self.screen.getMax() - step)
 
         return random
