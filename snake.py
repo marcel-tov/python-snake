@@ -7,7 +7,7 @@ class Snake:
         snake.shape("square")
         snake.color("green")
         snake.penup()
-        snake.goto(0, 0)
+        snake.home()
         snake.direction = "stop"
 
         return snake
