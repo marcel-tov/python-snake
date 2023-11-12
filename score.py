@@ -1,5 +1,4 @@
 import turtle
-from screen import Screen
 
 class Score:
     score = 0
