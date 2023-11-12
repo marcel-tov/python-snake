@@ -18,10 +18,10 @@ collisionDetection = CollisionDetection()
 while True:
     screen.getWindow().update()
 
-    if collisionDetection.isSnakeHitsScreenEdge(snake, screen):
+    if collisionDetection.snakeHitsScreenEdge(snake, screen):
         snake.reset()
 
-    if collisionDetection.isSnakeCollidingWithFood(snake, food, screen):
+    if collisionDetection.snakeIsCollidingWithFood(snake, food, screen):
         food.moveToRandom()
 
     control.move()

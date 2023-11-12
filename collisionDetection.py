@@ -3,7 +3,7 @@ from screen import Screen
 from snake import Snake
 
 class CollisionDetection:
-    def isSnakeHitsScreenEdge(self, snake: Snake, screen: Screen):
+    def snakeHitsScreenEdge(self, snake: Snake, screen: Screen):
         min = screen.getMin()
         max = screen.getMax()
         x = snake.getSnakeHead().xcor()
@@ -14,5 +14,5 @@ class CollisionDetection:
 
         return False
 
-    def isSnakeCollidingWithFood(self, snake: Snake, food: Food, screen: Screen):
+    def snakeIsCollidingWithFood(self, snake: Snake, food: Food, screen: Screen):
         return snake.getSnakeHead().distance(food.food) < screen.step
