@@ -7,7 +7,7 @@ class Control:
     directionLeft = "left"
     directionRight = "right"
 
-    def __init__(self, snake, screen: Screen):
+    def __init__(self, snake: turtle.Turtle, screen: Screen):
         self.snake = snake
         self.screen = screen
 
