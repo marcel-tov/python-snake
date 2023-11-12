@@ -1,15 +1,7 @@
 import turtle
-
 from food import Food
+from screen import Screen
 
 class CollisionDetection:
-    def isSnakeCollidingWithFood(self, snake: turtle.Turtle, food: Food):
-
-        # if (snake.xcor() <=)
-        # print("isSnakeCollidingWithFood")
-        # print(snake.xcor())
-        # print(snake.ycor())
-        # print(food.food.xcor())
-        # print(food.food.ycor())
-
-        return False
+    def isSnakeCollidingWithFood(self, snakeHead: turtle.Turtle, food: Food, screen: Screen):
+        return snakeHead.distance(food.food) < screen.step

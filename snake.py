@@ -14,6 +14,3 @@ class Snake:
         self.snake.direction = "stop"
 
         return self.snake
-
-    def hitsFood(self, food: Food, screen: Screen):
-        return self.snake.distance(food.food) < screen.step
