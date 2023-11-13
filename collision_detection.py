@@ -1,4 +1,4 @@
-from food import Food
+import turtle
 from screen import Screen
 from snake import Snake
 
@@ -14,8 +14,8 @@ class CollisionDetection:
 
         return False
 
-    def snake_head_is_colliding_with_food(self, snake: Snake, food: Food, screen: Screen):
-        return snake.head.distance(food.food) < screen.step
+    def snake_head_is_colliding_with_food(self, snake: Snake, food: turtle, screen: Screen):
+        return snake.head.distance(food) < screen.step
 
     def snake_is_colliding_with_itself(self, snake: Snake, screen: Screen):
         for segment in snake.segments:
@@ -24,7 +24,7 @@ class CollisionDetection:
 
         return False
 
-    def snake_is_colliding_with_food(self, snake: Snake, food: Food, screen: Screen):
+    def snake_is_colliding_with_food(self, snake: Snake, food: turtle, screen: Screen):
         segment_hits_food = False
         for segment in snake.segments:
             if segment.distance(snake.head) < screen.step:

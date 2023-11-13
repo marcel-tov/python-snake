@@ -3,7 +3,7 @@ from random_food import RandomFood
 from screen import Screen
 from snake import Snake
 from control import Control
-from food import Food
+from food import food
 from collision_detection import CollisionDetection
 from score import Score
 
@@ -11,7 +11,6 @@ DELAY = 0.1
 screen = Screen()
 snake = Snake(screen)
 control = Control(snake, screen)
-food = Food()
 collisionDetection = CollisionDetection()
 score = Score()
 random_food = RandomFood(screen, snake, food, collisionDetection)

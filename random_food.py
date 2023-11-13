@@ -1,13 +1,13 @@
+import turtle
 from random import randint
 from collision_detection import CollisionDetection
 from screen import Screen
-from food import Food
 from snake import Snake
 
 class RandomFood:
     def __init__(self, screen: Screen,
                 snake: Snake,
-                food: Food,
+                food: turtle,
                 collision_detection: CollisionDetection):
         self.screen = screen
         self.snake = snake
@@ -18,7 +18,7 @@ class RandomFood:
         x = self.get_random_x()
         y = self.get_random_y()
 
-        self.food.food.goto(x, y)
+        self.food.goto(x, y)
 
     def get_random_x(self):
         step = self.screen.step
