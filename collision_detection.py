@@ -14,7 +14,7 @@ class CollisionDetection:
 
         return False
 
-    def snake_is_colliding_with_food(self, snake: Snake, food: Food, screen: Screen):
+    def snake_head_is_colliding_with_food(self, snake: Snake, food: Food, screen: Screen):
         return snake.head.distance(food.food) < screen.step
 
     def snake_is_colliding_with_itself(self, snake: Snake, screen: Screen):
@@ -23,3 +23,13 @@ class CollisionDetection:
                 return True
 
         return False
+
+    def snake_is_colliding_with_food(self, snake: Snake, food: Food, screen: Screen):
+        segment_hits_food = False
+        for segment in snake.segments:
+            if segment.distance(snake.head) < screen.step:
+                segment_hits_food = True
+                break
+
+        return self.snake_head_is_colliding_with_food(snake, food, screen) or \
+               segment_hits_food
