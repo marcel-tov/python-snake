@@ -24,9 +24,9 @@ class Score:
 
     def score_template(self):
         if (self.high_score > 0):
-            return "Score: %s  High score: %s" % (self.score, self.high_score)
+            return f"Score: {self.score} High score: {self.high_score}"
 
-        return "Score: %s" % (self.score)
+        return f"Score: {self.score}"
 
     def reset(self):
         self.high_score = self.score
