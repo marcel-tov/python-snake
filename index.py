@@ -3,7 +3,7 @@ from screen import Screen
 from snake import Snake
 from control import Control
 from food import Food
-from collisionDetection import CollisionDetection
+from collision_detection import CollisionDetection
 from score import Score
 
 DELAY = 0.1
