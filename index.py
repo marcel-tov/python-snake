@@ -1,4 +1,5 @@
 from time import sleep
+from random_food import RandomFood
 from screen import Screen
 from snake import Snake
 from control import Control
@@ -10,14 +11,15 @@ DELAY = 0.1
 screen = Screen()
 snake = Snake(screen)
 control = Control(snake, screen)
-food = Food(screen)
-food.move_to_random()
+food = Food()
 collisionDetection = CollisionDetection()
 score = Score()
+random_food = RandomFood(screen, snake, food, collisionDetection)
+random_food.move_to_random()
 
 def reset_game():
     snake.reset()
-    food.move_to_random()
+    random_food.move_to_random()
     score.reset()
     sleep(1)
 
@@ -29,9 +31,9 @@ while True:
        collisionDetection.snake_is_colliding_with_itself(snake, screen):
         reset_game()
 
-    if collisionDetection.snake_is_colliding_with_food(snake, food, screen):
+    if collisionDetection.snake_head_is_colliding_with_food(snake, food, screen):
         score.increment_score()
-        food.move_to_random()
+        random_food.move_to_random()
         snake.add_segment()
 
     snake.move()
