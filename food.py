@@ -21,23 +21,24 @@ class Food:
         self.food.goto(x, y)
 
     def getRandomX(self):
-        random = -1
         step = self.screen.step
         min = self.screen.getMin()
         max = self.screen.getMax()
 
-        while (random % step != 0):
-            random = randint(min + (step / 2), max - step)
-
-        return random
+        return self.getRandom(min + (step / 2), max - step)
 
     def getRandomY(self):
-        random = -1
         step = self.screen.step
         min = self.screen.getMin()
         max = self.screen.getMax()
 
+        return self.getRandom(min + step, max - (step / 2))
+
+    def getRandom(self, min, max):
+        random = -1
+        step = self.screen.step
+
         while (random % step != 0):
-            random = randint(min + step, max - (step / 2))
+            random = randint(min, max)
 
         return random
