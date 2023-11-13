@@ -25,7 +25,8 @@ def reset_game():
 while True:
     screen.window.update()
 
-    if collisionDetection.snake_hits_screen_edge(snake, screen) or collisionDetection.snake_is_colliding_with_itself(snake, screen):
+    if collisionDetection.snake_hits_screen_edge(snake, screen) or \
+       collisionDetection.snake_is_colliding_with_itself(snake, screen):
         reset_game()
 
     if collisionDetection.snake_is_colliding_with_food(snake, food, screen):
