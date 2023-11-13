@@ -42,4 +42,3 @@ class Snake:
             x = self.head.xcor()
             y = self.head.ycor()
             self.segments[0].goto(x, y)
-

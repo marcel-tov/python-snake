@@ -32,4 +32,3 @@ class Score:
         self.highScore = self.score
         self.score = 0
         self.render()
-
