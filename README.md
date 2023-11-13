@@ -3,5 +3,5 @@
 ## Install
 `brew install python-tk`
 
-## run
+## Run
 `pyhton3 index.py`
