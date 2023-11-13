@@ -6,7 +6,7 @@ class Snake:
 
     def __init__(self, screen: Screen):
         self.screen = screen
-        self.head = self.createBody("green")
+        self.head = self.create_body("green")
         self.reset()
 
     def reset(self):
@@ -14,13 +14,13 @@ class Snake:
         self.head.direction = "stop"
 
         for segment in self.segments:
-            x = self.screen.getMax() + self.screen.step + 1
+            x = self.screen.get_max() + self.screen.step + 1
             y = x
             segment.goto(x, y)
 
         self.segments.clear()
 
-    def createBody(self, color = "grey"):
+    def create_body(self, color = "grey"):
         body = turtle.Turtle()
         body.speed(0)
         body.shape("square")
@@ -29,8 +29,8 @@ class Snake:
 
         return body
 
-    def addSegment(self):
-        self.segments.append(self.createBody())
+    def add_segment(self):
+        self.segments.append(self.create_body())
 
     def move(self):
         for i in range(len(self.segments) -1, 0, -1):

@@ -16,13 +16,13 @@ class Score:
 
     def render(self):
         self.hud.clear()
-        self.hud.write(self.scoreTemplate(), align="center", font=("Courier", 24, "normal"))
+        self.hud.write(self.score_template(), align="center", font=("Courier", 24, "normal"))
 
-    def incrementScore(self):
+    def increment_score(self):
         self.score += 1
         self.render()
 
-    def scoreTemplate(self):
+    def score_template(self):
         if (self.high_score > 0):
             return "Score: %s  High score: %s" % (self.score, self.high_score)
 

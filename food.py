@@ -14,27 +14,27 @@ class Food:
         self.food.goto(0, 0)
         self.food.direction = "stop"
 
-    def moveToRandom(self):
-        x = self.getRandomX()
-        y = self.getRandomY()
+    def move_to_random(self):
+        x = self.get_random_x()
+        y = self.get_random_y()
 
         self.food.goto(x, y)
 
-    def getRandomX(self):
+    def get_random_x(self):
         step = self.screen.step
-        min_screen = self.screen.getMin()
-        max_screen = self.screen.getMax()
+        min_screen = self.screen.get_min()
+        max_screen = self.screen.get_max()
 
-        return self.getRandom(min_screen + (step / 2), max_screen - step)
+        return self.get_random(min_screen + (step / 2), max_screen - step)
 
-    def getRandomY(self):
+    def get_random_y(self):
         step = self.screen.step
-        min_screen = self.screen.getMin()
-        max_screen = self.screen.getMax()
+        min_screen = self.screen.get_min()
+        max_screen = self.screen.get_max()
 
-        return self.getRandom(min_screen + step, max_screen - (step / 2))
+        return self.get_random(min_screen + step, max_screen - (step / 2))
 
-    def getRandom(self, min_screen, max_screen):
+    def get_random(self, min_screen, max_screen):
         random = -1
         step = self.screen.step
 
