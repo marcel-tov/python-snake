@@ -5,7 +5,10 @@ from food import Food
 from snake import Snake
 
 class RandomFood:
-    def __init__(self, screen: Screen, snake: Snake, food: Food, collision_detection: CollisionDetection):
+    def __init__(self, screen: Screen,
+                snake: Snake,
+                food: Food,
+                collision_detection: CollisionDetection):
         self.screen = screen
         self.snake = snake
         self.food = food
