@@ -38,7 +38,7 @@ class Food:
         random = -1
         step = self.screen.step
 
-        while (random % step != 0):
+        while random % step != 0:
             random = randint(min_screen, max_screen)
 
         return random

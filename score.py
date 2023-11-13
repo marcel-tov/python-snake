@@ -23,7 +23,7 @@ class Score:
         self.render()
 
     def score_template(self):
-        if (self.high_score > 0):
+        if self.high_score > 0:
             return f"Score: {self.score} High score: {self.high_score}"
 
         return f"Score: {self.score}"
