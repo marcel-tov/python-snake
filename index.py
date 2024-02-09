@@ -1,43 +1,73 @@
-from time import sleep
-from random_food import RandomFood
-from screen import Screen
-from snake import Snake
-from control import Control
-from food import food
-from collision_detection import CollisionDetection
-from score import Score
+import turtle
+import time
+import random
 
-DELAY = 0.1
-screen = Screen()
-snake = Snake(screen)
-control = Control(snake, screen)
-collisionDetection = CollisionDetection()
-score = Score()
-random_food = RandomFood(screen, snake, food, collisionDetection)
-random_food.move_to_random()
+delay = 0.1
 
-def reset_game():
-    snake.reset()
-    random_food.move_to_random()
-    score.reset()
-    sleep(1)
+#set up screen
+wn = turtle.Screen()
+wn.title("Snake Game")
+wn.bgcolor('yellow')
+wn.setup(width=600, height=600)
+wn.tracer(0)
+
+#snake head
+head = turtle.Turtle()
+head.speed(0)
+head.shape("square")
+head.color("black")
+head.penup()
+head.goto(0,0)
+head.direction = "stop"
+
+def go_up():
+    if head.direction != "down":
+        head.direction = "up"
+def go_down():
+    if head.direction != "up":
+        head.direction = "down"
+def go_left():
+    if head.direction != "right":
+        head.direction = "left"
+def go_right():
+    if head.direction != "left":
+        head.direction = "right"
+
+def move():
+    if head.direction == "up":
+        y = head.ycor()
+        head.sety(y+20)
+    # TODO: Move to down
+    if head.direction == "left":
+        x = head.xcor()
+        head.setx(x-20)
+    #TODO: move to right
+
+#keyboard bindings
+wn.listen()
+wn.onkeypress(go_up, "Up")
+# TODO move to down is missing
+wn.onkeypress(go_left, "Left")
+# TODO move to right is missing
 
 # Main game loop
 while True:
-    screen.window.update()
+    wn.update()
 
-    if collisionDetection.snake_hits_screen_edge(snake, screen) or \
-       collisionDetection.snake_is_colliding_with_itself(snake, screen):
-        reset_game()
+    #TODO: check collision with border area
+    #TODO: check collision with food
 
-    if collisionDetection.snake_head_is_colliding_with_food(snake, food, screen):
-        score.increment_score()
-        random_food.move_to_random()
-        snake.add_segment()
+        #TODO move the food to random place
+            # random.randint()
+            # goto(x, y)
 
-    snake.move()
-    control.move()
 
-    sleep(DELAY)
+    #TODO: move the segments in reverse order
 
-screen.window.mainloop()
+    move()
+
+    #TODO: check for collision with body
+
+    time.sleep(delay)
+
+wn.mainloop()
