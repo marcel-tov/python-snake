@@ -46,9 +46,9 @@ def move():
 #keyboard bindings
 wn.listen()
 wn.onkeypress(go_up, "Up")
-# TODO move to down is missing
+# TODO move to down is missing, Use go_down here
 wn.onkeypress(go_left, "Left")
-# TODO move to right is missing
+# TODO move to right is missing. Use go_right here
 
 # Main game loop
 while True:
@@ -58,8 +58,8 @@ while True:
     #TODO: check collision with food
 
         #TODO move the food to random place
-            # random.randint()
-            # goto(x, y)
+            # random.randint(): https://docs.python.org/3/library/random.html#random.randint
+            # goto(x, y): https://docs.python.org/3/library/turtle.html#turtle.goto
 
 
     #TODO: move the segments in reverse order
