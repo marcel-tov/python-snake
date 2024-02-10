@@ -20,6 +20,9 @@ head.penup()
 head.goto(0,0)
 head.direction = "stop"
 
+#snake food
+# add snake food here
+
 def go_up():
     if head.direction != "down":
         head.direction = "up"
@@ -55,8 +58,8 @@ while True:
     wn.update()
 
     #TODO: check collision with border area
+        # TODO: if head collied reset to 0,0
     #TODO: check collision with food
-
         #TODO move the food to random place
             # random.randint(): https://docs.python.org/3/library/random.html#random.randint
             # goto(x, y): https://docs.python.org/3/library/turtle.html#turtle.goto
